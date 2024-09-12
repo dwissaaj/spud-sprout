@@ -11,7 +11,8 @@ export default function Register() {
   })
   return (
     <SafeAreaView className='h-full bg-black'>
-        <ScrollView className='p-4 m-2 flex space-y-4'>
+      <ScrollView contentContainerStyle={{ height: '100%' }} className='p-4 m-2 flex space-y-4 '>
+        <View className="bg-black w-full ">
           <View className='w-full flex items-center '>
             <Text className='text-5xl font-fredbold text text-white'>Welcome to Garden!🐝</Text>
           </View>
@@ -19,13 +20,14 @@ export default function Register() {
             <Text className='text-white font-cbnreg text-xl'>Gardening is a way too relieve stress</Text>
           </View>
           <View className='mt-4 '>
-          <FormField onChangeText={(e) => setForm({...form, email: e})} keyboardType={'email-address'} value={form.email} title='Your Email' placeholder='Email Address' />
-          <FormField onChangeText={(e) => setForm({...form, password: e})} keyboardType={'email-address'} value={form.password} title='Your Password' placeholder='Secret' />
+            <FormField onChangeText={(e) => setForm({ ...form, email: e })} keyboardType={'email-address'} value={form.email} title='Your Email' placeholder='Email Address' />
+            <FormField onChangeText={(e) => setForm({ ...form, password: e })} keyboardType={'email-address'} value={form.password} title='Your Password' placeholder='Secret' />
           </View>
-          <View>
-            <BaseButton  title="Let's Go" isLoading={false} containerStyles='bg-white' textStyle=' font-fredbold' handlePress={() => console.log("Pressed")}/>
+          <View className='mt-4'>
+            <BaseButton title="Let's Go" isLoading={false} containerStyles='bg-white' textStyle=' font-fredbold' handlePress={() => console.log("Pressed")} />
           </View>
-        </ScrollView>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   )
 }

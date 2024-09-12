@@ -1,5 +1,5 @@
 import BaseButton from "@/components/base/BaseButton";
-import { Link, router } from "expo-router";
+import { router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Image, ScrollView, Text, View, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -18,7 +18,7 @@ export default function Index() {
           <BaseButton handlePress={() => router.push('/login')} isLoading={false} containerStyles="w-full mt-7 bg-primary " textStyle="text-white" title="Let's Plan Together" />
         </View>
       </ScrollView>
-      <StatusBar backgroundColor="" style="light" />
+      <StatusBar backgroundColor="#fffff" style="light" />
     </SafeAreaView>
   );
 }
