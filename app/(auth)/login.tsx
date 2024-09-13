@@ -15,22 +15,24 @@ const Login = () => {
   return (
     <SafeAreaView className='bg-black h-full'>
       <ScrollView>
-        <View className='flex w-full justify-center items-center '>
-        <Text className='text-5xl font-fredbold text-white text-white'>Login</Text>
-      
-        </View>
-        <View className='m-4 flex flex-col '>
-        <FormField onChangeText={(e) => setForm({...form, email: e})} keyboardType={'email-address'} value={form.email} title='Your Email' placeholder='Email Address' />
-        <FormField onChangeText={(e) => setForm({...form, password: e})} keyboardType={'email-address'} value={form.password} title='Your Password' placeholder='Secret' />
-        <BaseButton handlePress={() => console.log("Submit form")} isLoading={loading} containerStyles='bg-primary mt-4' textStyle='text-white font-fredreg' title='Login' />
-        </View>
-        <View className='w-full items-center justify-center m-4 flex flex-row gap-2 '>
-          <Text className='text-xl text-white font-fredreg'>Don't have a account yet?</Text>
-          <Link className='text-xl text-primary font-fredreg' href={'/register'}> Go Here</Link>
-        </View>
-        
+        <View className='w-full min-h-[85vh] justify-center px-4'>
+          <View className='p-4'>
+            <Text className='text-5xl font-fredbold text-white text-white'>Login</Text>
 
-    </ScrollView>
+          </View>
+          <View className='m-4 flex flex-col '>
+            <FormField onChangeText={(e) => setForm({ ...form, email: e })} keyboardType={'email-address'} value={form.email} title='Your Email' placeholder='Email Address' />
+            <FormField onChangeText={(e) => setForm({ ...form, password: e })} keyboardType={'default'} value={form.password} title='Your Password' placeholder='Secret' />
+            <BaseButton handlePress={() => console.log("Submit form")} isLoading={loading} containerStyles='bg-primary mt-4' textStyle='text-white font-fredreg' title='Login' />
+          </View>
+          <View className='w-full items-center justify-center m-4 flex flex-row gap-2 '>
+            <Text className='text-xl text-white font-fredreg'>Don't have a account yet?</Text>
+            <Link className='text-xl text-primary font-fredreg' href={'/register'}> Go Here</Link>
+          </View>
+        </View>
+
+
+      </ScrollView>
     </SafeAreaView>
   )
 }
