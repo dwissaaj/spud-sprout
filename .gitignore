@@ -23,3 +23,9 @@ expo-env.d.ts
 #text file
 
 file.txt
+
+
+# env
+
+.env*
+.env*.local

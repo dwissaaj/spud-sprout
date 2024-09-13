@@ -1,5 +1,10 @@
+
+
 export const appWriteConfig = {
-  endpoint: 'https://cloud.appwrite.io/v1',
+  endpoint: process.env.EXPO_PUBLIC_APPWRITE_CLOUD,
   platform: 'com.spudsprout',
-  projectId: '66e426230027ee3fac79'
+  projectId: process.env.EXPO_PROJECTID,
+  databaseId: process.env.EXPO_DATABASEID,
+  blogCollectionId: process.env.EXPO_BLOGSCOLLECTIONID,
+  usersCollectionId: process.env.EXPO_USERCOLLECTIONID
 }
