@@ -4,11 +4,18 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import FormField from '@/components/base/FormField'
 import BaseButton from '@/components/base/BaseButton'
 import { Link } from 'expo-router'
+import { createUser } from '@/lib/appwrite'
 export default function Register() {
   const [form, setForm] = useState({
     email: '',
-    password: ''
+    password: '',
+    username: ''
   })
+  const submit = () => {
+    console.log("Register submit!!!")
+    createUser()
+    
+  }
   return (
     <SafeAreaView className='h-full bg-black'>
       <ScrollView >
@@ -21,11 +28,12 @@ export default function Register() {
             <Text className='text-white font-cbnreg text-xl'>Gardening is a way too relieve stress</Text>
           </View>
           <View className='mt-4 '>
-            <FormField onChangeText={(e) => setForm({ ...form, email: e })} keyboardType={'email-address'} value={form.email} title='Your Email' placeholder='Email Address' />
-            <FormField onChangeText={(e) => setForm({ ...form, password: e })} keyboardType={'email-address'} value={form.password} title='Your Password' placeholder='Secret' />
+          <FormField onChangeText={(e) => setForm({ ...form, email: e })} keyboardType={'email-address'} value={form.username} title='Username' placeholder='Username' />
+            <FormField onChangeText={(e) => setForm({ ...form, email: e })} keyboardType={'email-address'} value={form.email} title='Email' placeholder='Email' />
+            <FormField onChangeText={(e) => setForm({ ...form, password: e })} keyboardType={'default'} value={form.password} title='Password' placeholder='Secret' />
           </View>
           <View className='mt-4'>
-            <BaseButton title="Let's Go" isLoading={false} containerStyles='bg-white' textStyle=' font-fredbold' handlePress={() => console.log("Pressed")} />
+            <BaseButton title="Let's Go" isLoading={false} containerStyles='bg-white' textStyle=' font-fredbold' handlePress={submit} />
           </View>
         </View>
         <View className='w-full items-center justify-center m-4 flex flex-row gap-2 '>

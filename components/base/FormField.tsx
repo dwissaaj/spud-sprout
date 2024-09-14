@@ -8,7 +8,7 @@ export type Props = {
     keyboardType: string | any
 }
 
-const FormField = ({title, value, placeholder,onChangeText, keyboardType}: Props) => {
+const FormField = ({title, value, placeholder,onChangeText, keyboardType,...props}: Props) => {
   return (
     <View className='space-y-2 '>
     <Text className='text-xl text-white'>{title}</Text>
