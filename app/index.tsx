@@ -1,7 +1,7 @@
 import BaseButton from "@/components/base/BaseButton";
 import { router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { Image, ScrollView, Text, View, } from "react-native";
+import { Image, ScrollView, Text, TouchableOpacity, View, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
@@ -16,6 +16,7 @@ export default function Index() {
           </View>
           <Text className="text-md font-cabinreg text-white">From Seed to Harvest! Simplified</Text>
           <BaseButton handlePress={() => router.push('/login')} isLoading={false} containerStyles="w-full mt-7 bg-primary " textStyle="text-white" title="Let's Plan Together" />
+          <TouchableOpacity onPress={() => router.push('/home')}><Text>Home</Text></TouchableOpacity>
         </View>
       </ScrollView>
       <StatusBar backgroundColor="#fffff" style="light" />
